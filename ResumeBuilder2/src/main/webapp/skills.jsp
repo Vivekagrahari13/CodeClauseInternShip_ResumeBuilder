@@ -23,22 +23,22 @@
 		<form action="skills" method="post">
 			<h2 style="text-decoration-line:underline">Skills</h2>
 			Programming Languages:
-			<textarea maxlength="300" class="width1" type="text" name="langauge"
+			<textarea maxlength="300" class="width1" type="text" name="language"
 				placeholder="not more than 300 character" required></textarea>
 			<br> Databases:<br>
 			<textarea maxlength="300" class="width1" type="text" name="databases"
 				placeholder="not more than 300 character" required></textarea>
 			<br> Frameworks:<br>
-			<textarea maxlength="300" class="width1" type="text" name="databases"
+			<textarea maxlength="300" class="width1" type="text" name="framework"
 				placeholder="not more than 300 character" required></textarea>
 			<br> Version Control, Tools & IDE:<br>
-			<textarea maxlength="300" class="width1" type="text" name="databases"
+			<textarea maxlength="300" class="width1" type="text" name="versionControl"
 				placeholder="not more than 300 character" required></textarea>
 			<br> Course Work:<br>
-			<textarea maxlength="300" class="width1" type="text" name="databases"
+			<textarea maxlength="300" class="width1" type="text" name="courseWork"
 				placeholder="not more than 300 character" required></textarea>
 			<br> Soft Skills:<br>
-			<textarea maxlength="300" class="width1" type="text" name="databases"
+			<textarea maxlength="300" class="width1" type="text" name="softSkills"
 				placeholder="not more than 300 character" required></textarea>
 			<br>
 <div class="prev_next-buttons">
@@ -50,12 +50,28 @@
 				</button>
 				<button 
 					class="btn btn-outline-success">
-					<a href="experience.jsp">Add&Next</a>
+					<a href="experience.jsp" onclick="return validateForm();">Add&Next</a>
 				</button>
 				</div>
 			</div>
 			<hr>
 		</form>
 		</div>
+		<script>
+		function validateForm() {
+        var proLang = document.getElementsByName("language")[0].value;
+        var db = document.getElementsByName("databases")[0].value;
+        var frame = document.getElementsByName("framework")[0].value;
+        var version = document.getElementsByName("versionControl")[0].value;
+        var course = document.getElementsByName("courseWork")[0].value;
+        var soft = document.getElementsByName("softSkills")[0].value;
+
+        if (proLang === "" || db === "" || frame === "" || version === "" || course === "" || soft === "") {
+            alert("Please fill in all the required fields.");
+            return false; // Prevent navigation
+        }
+        return true;
+        }
+        </script>
 </body>
 </html>

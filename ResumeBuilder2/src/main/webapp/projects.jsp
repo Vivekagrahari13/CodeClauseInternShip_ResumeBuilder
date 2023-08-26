@@ -31,7 +31,7 @@
 			<h2>Add your projects</h2>
 			Project1:<input class="width1" type="text" name="project1"
 				placeholder="Project Title" required /><br> Description:<br>
-			<textarea maxlength="300" class="width1" type="text" name="git"
+			<textarea maxlength="300" class="width1" type="text" name="des"
 				placeholder="A brief description of your project not more than 150 words"
 				required></textarea>
 			<br> Project2:<input class="width1" type="text" name="project2"
@@ -49,12 +49,25 @@
 				</button>
 				<button 
 					class="btn btn-outline-success">
-					<a href="achievement.jsp">Add&Next</a>
+					<a href="achievement.jsp"onclick="return validateForm();">Add&Next</a>
 				</button>
 				</div>
 			</div>
 			<hr>
 		</form>
 	</div>
+	<script type="text/javascript">
+    function validateForm() {
+        var p1 = document.getElementsByName("project1")[0].value;
+        var p2 = document.getElementsByName("project2")[0].value;
+        
+
+        if (p1 === "" || p2 === "" ) {
+            alert("Please fill in all the required fields.");
+            return false; // Prevent navigation
+        }
+        return true;
+    }
+</script>
 </body>
 </html>

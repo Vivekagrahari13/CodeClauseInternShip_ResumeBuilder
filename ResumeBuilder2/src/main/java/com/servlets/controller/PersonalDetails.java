@@ -1,4 +1,4 @@
-package com.user.entities;
+package com.servlets.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,15 +7,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Experience
+ * Servlet implementation class PersonalDetails
  */
-public class Experience extends HttpServlet {
+public class PersonalDetails extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Experience() {
+    public PersonalDetails() {
         super();
         // TODO Auto-generated constructor stub
     }

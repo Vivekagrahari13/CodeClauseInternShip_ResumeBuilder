@@ -1,4 +1,4 @@
-package com.user.entities;
+package com.servlets.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

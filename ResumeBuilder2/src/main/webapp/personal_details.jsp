@@ -29,9 +29,9 @@
 		<form action="basicdetails">
 			<h2>Personal Details</h2>
 			<label for="name">Full Name: </label> <input type="text" name="name"
-				placeholder="Xoxo Gupta" required/> <br> <label
-				for="address">Address:</label> <input type="text" name="add"
-				placeholder="City, State, Country" required />
+				placeholder="Xoxo Gupta" required /> <br> <label for="address">Address:</label>
+			<input type="text" name="add" placeholder="City, State, Country"
+				required />
 
 			<h3 style="text-decoration-line: underline">Contact & Social
 				Links:</h3>
@@ -48,13 +48,37 @@
 				type="text" name="git"
 				placeholder="https://stackoverflow-username.com" required />
 			<div class="prev_next-buttons">
-      <button class="btn btn-outline-danger"><a href="index.jsp">Prev</a></button><br><br>
-      <button class="btn btn-outline-success"><a href="education.jsp">Add&Next</a></button>
-    </div>
+				<button class="btn btn-outline-danger">
+					<a href="index.jsp">Prev</a>
+				</button>
+				<br>
+				<br>
+				<button class="btn btn-outline-success"
+					onclick="return validateForm();">
+					<a href="education.jsp">Add&Next</a>
+				</button>
+			</div>
 		</form>
 
 		<hr>
 
 	</div>
+	<script type="text/javascript">
+		function validateForm() {
+			var fullName = document.getElementsByName("name")[0].value;
+			var address = document.getElementsByName("add")[0].value;
+			var email = document.getElementsByName("email")[0].value;
+			var linkedin = document.getElementsByName("linkedin")[0].value;
+			var github = document.getElementsByName("git")[0].value;
+
+			if (fullName === "" || address === "" || email === ""
+					|| linkedin === "" || github === "") {
+				alert("Please fill in all the required fields.");
+				return false; // Prevent navigation
+			}
+			return true;
+		}
+	</script>
+
 </body>
 </html>

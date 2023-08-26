@@ -52,12 +52,30 @@
 				required /> <br>
 <div class="prev_next-buttons">
       <button class="btn btn-outline-danger"><a href="personal_details.jsp">Prev</a></button>
-      <button class="btn btn-outline-success"><a href="skills.jsp">Add&Next</a></button>
+      <button class="btn btn-outline-success"onclick="return validateForm();"><a href="skills.jsp">Add&Next</a></button>
     </div>
 
 		</form>
 		<hr>
 	</div>
+<script>
+    function validateForm() {
+        var degree = document.getElementsByName("degreeName")[0].value;
+        var college = document.getElementsByName("collegeName")[0].value;
+        var passyr = document.getElementsByName("passYear")[0].value;
+        var gpa = document.getElementsByName("percentGpa")[0].value;
+        var school = document.getElementsByName("schoolName")[0].value;
 
+        if (degree === "" || college === "" || passyr === "" || gpa === "" || school === "") {
+            alert("Please fill in all the required fields.");
+            return false; // Prevent navigation
+        }
+
+        // Additional validation checks can be added here if needed
+
+        // If all validation passes, navigation will proceed
+        return true;
+    }
+</script>
 </body>
 </html>
